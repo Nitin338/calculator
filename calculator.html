@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cal {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cal">
+        <h1>Calculator</h1>
+        <input type="text" id="input"><br>
+
+        <button type="text" class="btn" onclick="display('1')">1</button>
+        <button type="text" class="btn" onclick="display('2')">2</button>
+        <button type="text" class="btn" onclick="display('3')">3</button><br>
+        <button type="text" class="btn" onclick="display('4')">4</button>
+        <button type="text" class="btn" onclick="display('5')">5</button>
+        <button type="text" class="btn" onclick="display('6')">6</button><br>
+        <button type="text" class="btn" onclick="display('7')">7</button>
+        <button type="text" class="btn" onclick="display('8')">8</button>
+        <button type="text" class="btn" onclick="display('9')">9</button><br>
+        <button type="text" class="btn" onclick="display('0')">0</button>
+        <button type="text" class="btn" onclick="operators('+')">+</button>
+        <button type="text" class="btn" onclick="operators('-')">-</button><br>
+        <button type="text" class="btn" onclick="operators('*')">*</button>
+        <button type="text" class="btn" onclick="operators('/')">/</button>
+        <button type="text" class="btn" onclick="result()">=</button>
+    </div>
+    <span id="resultvalue"></span>
+    <script>
+        let input1 = '';
+        let input2 = '';
+        let operator = '';
+
+
+        function display(value) {
+            if (input1 == '') {
+                input1 = Number(document.getElementById('input').value = value)
+                console.log(input1);
+                console.log(document.getElementById('input'));
+
+            } else {
+                input2 = Number(document.getElementById('input').value = value)
+                document.getElementById('input').value += value
+                console.log(input2);
+            }
+        }
+
+        const operators = (value) => {
+            operator = value
+            document.getElementById('input').value = document.getElementById('input').value += value
+
+        }
+        const result = () => {
+            switch (operator) {
+                case "+":
+                    document.getElementById('resultvalue').outerText = input1 + input2
+                break;
+                case "-":
+                    document.getElementById('resultvalue').outerText = input1 - input2
+                break;
+                case "/":
+                    document.getElementById('resultvalue').outerText = input1 / input2
+                break;
+                case "*":
+                    document.getElementById('resultvalue').outerText = input1 * input2
+                break;
+                    
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
